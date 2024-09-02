@@ -5,6 +5,10 @@ const app = express();
 const cors = require("cors");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
+const userRoutes = require("./Routes/userRoutes");
+const chatRoutes = require("./Routes/chatRoutes");
+const messageRoutes = require("./Routes/messageRoutes");
+
 app.use(
   cors({
     origin: "*",
@@ -14,9 +18,6 @@ dotenv.config();
 
 app.use(express.json());
 
-const userRoutes = require("./Routes/userRoutes");
-const chatRoutes = require("./Routes/chatRoutes");
-const messageRoutes = require("./Routes/messageRoutes");
 
 const connectDb = async () => {
   try {
